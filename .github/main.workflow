@@ -17,7 +17,11 @@ action "Build" {
 action "Publish" {
   uses = "DevinCarr/publish-gh-pages@master"
   needs = ["Build"]
-  secrets = ["GITHUB_TOKEN"]
+  secrets = [
+    "GIT_PERSONAL_ACCESS_TOKEN",
+    "GIT_USER",
+    "GIT_EMAIL",
+  ]
   env = {
     PUBLISH_DIRECTORY = "build"
   }

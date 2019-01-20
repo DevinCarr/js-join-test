@@ -4,12 +4,12 @@ workflow "Build and Publish" {
 }
 
 action "Install" {
-  uses = "actions/npm@de7a3705a9510ee12702e124482fad6af249991b"
+  uses = "actions/npm@master"
   runs = "install"
 }
 
 action "Build" {
-  uses = "actions/npm@de7a3705a9510ee12702e124482fad6af249991b"
+  uses = "actions/npm@master"
   needs = ["Install"]
   runs = "build"
 }

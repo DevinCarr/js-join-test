@@ -5,13 +5,13 @@ workflow "Build and Publish" {
 
 action "Install" {
   uses = "actions/npm@master"
-  runs = "install"
+  args = "install"
 }
 
 action "Build" {
   uses = "actions/npm@master"
   needs = ["Install"]
-  runs = "build"
+  args = "run build"
 }
 
 action "DevinCarr/publish-gh-pages" {

@@ -1,6 +1,6 @@
 workflow "Build and Publish" {
   on = "push"
-  resolves = ["DevinCarr/publish-gh-pages"]
+  resolves = ["Publish"]
 }
 
 action "Install" {
@@ -14,7 +14,7 @@ action "Build" {
   args = "run build"
 }
 
-action "DevinCarr/publish-gh-pages" {
+action "Publish" {
   uses = "DevinCarr/publish-gh-pages@master"
   needs = ["Build"]
   secrets = ["GITHUB_TOKEN"]
